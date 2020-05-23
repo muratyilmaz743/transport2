@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<TabPane xmlns:fxcontroller="sample/Controller.java" xmlns:fx="http://javafx.com/fxml/1" prefHeight="426.0" prefWidth="894.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+   <tabs>
+      <Tab fx:id="tab1" style="-fx-background-color: #F7F8FF;" text="Hat Ara">
+         <content>
+            <AnchorPane fx:id="HatTab" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="575.0" style="-fx-background-color: #F7F8FF;">
+               <children>
+                  <AnchorPane fx:id="inputDiv" layoutX="91.0" layoutY="18.0" prefHeight="305.0" prefWidth="258.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="544.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <Label layoutX="39.0" layoutY="73.0" text="Hat Numarası Giriniz" AnchorPane.bottomAnchor="218.8">
+                           <font>
+                              <Font name="Verdana Pro Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="HAT_ID_SHOW" accessibleText="Material_Three" layoutX="46.0" layoutY="168.0" onAction="#Hat_Show" style="-fx-background-color: #7465FD;" text="SHOW" />
+                        <Button fx:id="HAT_ID_RESET" accessibleText="Material_Three" layoutX="145.0" layoutY="168.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
+                        <TextField fx:id="HAT_INPUT" layoutX="54.0" layoutY="116.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="showDiv" layoutX="350.0" layoutY="46.0" prefHeight="249.0" prefWidth="469.0" style="-fx-background-color: #8A8EBA; -fx-border-width: 1 1 1 0; -fx-background-radius: 0 10 10 0; -fx-border-color: white; -fx-border-radius: 0 10 10 0;" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="46.0">
+                     <children>
+                        <GridPane layoutX="2.0" layoutY="2.0" prefHeight="241.0" prefWidth="571.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="45.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="292.8" minWidth="10.0" prefWidth="292.8" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="0.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="shoJunior" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="54.0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="ShoSayi" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="54.0" textAlignment="JUSTIFY" textFill="WHITE" GridPane.rowIndex="3" />
+                              <Label fx:id="shoFull" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="54.0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="shoAd" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="152.0" textAlignment="JUSTIFY" textFill="WHITE" GridPane.rowIndex="1" />
+                              <Text fx:id="d" fill="#1800a1" strokeType="OUTSIDE" strokeWidth="0.0" text="Yetişkin Ücreti" textAlignment="CENTER" wrappingWidth="148.98046112060547" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="a" fill="#1800a1" strokeType="OUTSIDE" strokeWidth="0.0" text="Hat adı" textAlignment="CENTER" wrappingWidth="65.68041610717773">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="b" fill="#1800a1" strokeType="OUTSIDE" strokeWidth="0.0" text="Durak Sayısı" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="c" fill="#1800a1" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Öğrenci Ücreti" textAlignment="CENTER" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+
+      </Tab>
+      <Tab fx:id="tab2" style="-fx-background-color: #F7F8FF;" text="Duraklar">
+        <content>
+          <AnchorPane fx:id="hat_tab2" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="894.0" style="-fx-background-color: #F7F8FF;">
+               <children>
+                  <AnchorPane fx:id="inputDiv2" layoutX="317.0" layoutY="6.0" prefHeight="88.0" prefWidth="694.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="278.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="38.0" text="Hat Numarası Giriniz" AnchorPane.bottomAnchor="32.8" AnchorPane.topAnchor="33.0">
+                           <font>
+                              <Font name="Verdana Pro Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="HAT_INPUT2" layoutX="235.0" layoutY="33.0" AnchorPane.topAnchor="33.0" />
+                        <Button fx:id="HAT_ID_RESET2" accessibleText="Material_Three" layoutX="464.0" layoutY="29.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" AnchorPane.topAnchor="33.0" />
+                        <Button fx:id="HAT_ID_SHOW2" accessibleText="Material_Three" layoutX="576.0" layoutY="27.0" onAction="#Hat_Show2" style="-fx-background-color: #7465FD;" text="SHOW" AnchorPane.topAnchor="33.0" />
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="tableview" layoutX="332.0" layoutY="103.0" prefHeight="262.0" prefWidth="226.0" style="-fx-background-color: #F7F8FF;" AnchorPane.bottomAnchor="1.0" AnchorPane.topAnchor="103.0">
+                     <columns>
+                        <TableColumn fx:id="Sıra" prefWidth="38.4000244140625" text="Sıra" />
+                        <TableColumn fx:id="No" minWidth="16.0" prefWidth="39.20001220703125" text="No" />
+                        <TableColumn fx:id="Adı" prefWidth="148.79998779296875" text="Adı" />
+                     </columns></TableView>
+               </children>
+            </AnchorPane>
+        </content>
+
+      </Tab>
+      <Tab fx:id="tab3" style="-fx-background-color: #F7F8FF;" text="Duraktan Geçen hatlar">
+        <content>
+          <AnchorPane fx:id="durak_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane layoutX="403.0" layoutY="28.0" prefHeight="326.0" prefWidth="246.0" style="-fx-background-color: #8A8EBA; -fx-background-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="403.0">
+                     <children>
+                        <TableView fx:id="Hat_Show_Table" layoutX="16.0" layoutY="14.0" prefHeight="323.0" prefWidth="236.0" style="-fx-border-radius: 10;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                          <columns>
+                            <TableColumn fx:id="Hat_No" prefWidth="109.5999755859375" text="Hat Numarası" />
+                            <TableColumn fx:id="Hat_adi" prefWidth="126.4000244140625" text="Hat İsmi" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="inputDiv1" layoutX="149.0" layoutY="74.0" prefHeight="196.0" prefWidth="254.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+                     <children>
+                        <Label layoutX="36.0" layoutY="39.0" text="Durak Numarası Giriniz" AnchorPane.bottomAnchor="129.0">
+                           <font>
+                              <Font name="Verdana Pro Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="HAT_SHOW" accessibleText="Material_Three" layoutX="51.0" layoutY="146.0" onAction="#Hat_Show3" style="-fx-background-color: #7465FD;" text="SHOW" />
+                        <Button fx:id="HAT_ID_RESET1" accessibleText="Material_Three" layoutX="147.0" layoutY="146.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
+                        <TextField fx:id="HAT_SwInput" layoutX="51.0" layoutY="80.0" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="info_label" alignment="CENTER" layoutX="410.0" layoutY="5.0" prefHeight="18.0" prefWidth="231.0" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
