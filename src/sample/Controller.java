@@ -205,7 +205,6 @@ public class Controller implements Initializable{
         HAT_INPUT2.requestFocus();
         HAT_SwInput.requestFocus();
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
