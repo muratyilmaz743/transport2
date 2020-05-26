@@ -11,6 +11,7 @@ import javafx.util.Callback;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -30,6 +31,12 @@ public class Controller implements Initializable{
     public Button HAT_ID_RESET1;
     public Button HAT_SHOW;
     public Label info_label;
+    public Button card_show;
+    public Button HAT_ID_RESET11;
+    public TextField Card_input;
+    public Label showbalance;
+    public Label showLastdate;
+    public Label showType;
 
 
     //Connection for database//
@@ -44,7 +51,7 @@ public class Controller implements Initializable{
     @FXML
     private TableView tableview;
                                                         /********************
-                                                         *FOURTH TAB AND TABLE
+                                                         *FİRST TAB AND TABLE
                                                         ********************/
     private ObservableList<ObservableList> hatdata;
 
@@ -146,6 +153,10 @@ public class Controller implements Initializable{
         }
     }
 
+                                                                    /********************
+                                                                    *THİRD TAB AND TABLE
+                                                                    **********************/
+
     public void Hat_Show3(){
 
         String durak_id = HAT_SwInput.getText();
@@ -192,6 +203,43 @@ public class Controller implements Initializable{
             System.out.println("Error on Building Data");
         }
     }
+
+
+                                                                            /********************
+                                                                            *FİRST TAB AND TABLE
+                                                                            ********************/
+
+     public void Card_show(){
+
+         try {
+             String card_no = Card_input.getText();
+             String sql = "select card_type,balance,Last_date from transportation.travel_card where card_number="+card_no;
+             ResultSet rs = statement.executeQuery(sql);
+
+
+
+             while (rs.next()) {
+                 String type = (String) rs.getObject(1);
+                 String balance = (String) rs.getObject(2);
+                 Date date = (Date) rs.getObject(3);
+
+
+                 showType.setText(type);
+                 showbalance.setText(balance);
+                 showLastdate.setText(String.valueOf(date));
+
+
+
+             }
+         }catch (SQLException e) {
+             e.printStackTrace();
+         }
+
+
+         Card_input.setText("");
+         Card_input.requestFocus();
+     }
+
 
     public void Hat_Reset(){
         HAT_INPUT.setText("");

@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<TabPane xmlns:fxcontroller="sample/Controller.java" xmlns:fx="http://javafx.com/fxml/1" prefHeight="426.0" prefWidth="894.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane prefHeight="426.0" prefWidth="894.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" xmlns:fxcontroller="sample/Controller.java" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <tabs>
       <Tab fx:id="tab1" style="-fx-background-color: #F7F8FF;" text="Hat Ara">
          <content>
@@ -122,6 +133,61 @@
                      </children>
                   </AnchorPane>
                   <Label fx:id="info_label" alignment="CENTER" layoutX="410.0" layoutY="5.0" prefHeight="18.0" prefWidth="231.0" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab style="-fx-background-color: #F7F8FF;" text="Kartım">
+        <content>
+          <AnchorPane fx:id="Card_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="showDiv1" layoutX="298.0" layoutY="6.0" prefHeight="343.0" prefWidth="496.0" style="-fx-background-color: #8A8EBA; -fx-border-width: 1 1 1 0; -fx-background-radius: 10 10 10 10; -fx-border-color: white; -fx-border-radius: 10 10 10 10;" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
+                     <children>
+                        <GridPane layoutX="2.0" layoutY="2.0" prefHeight="303.0" prefWidth="477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="0.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="292.8" minWidth="10.0" prefWidth="292.8" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="0.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="showbalance" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="54.0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="showLastdate" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="150.0" textAlignment="JUSTIFY" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="showType" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="152.0" textAlignment="JUSTIFY" textFill="WHITE" GridPane.columnIndex="1" />
+                              <Text fx:id="a1" fill="#1800a1" strokeType="OUTSIDE" strokeWidth="0.0" text="Kart Tipi" textAlignment="CENTER" wrappingWidth="144.8804268836975">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="b1" fill="#1800a1" strokeType="OUTSIDE" strokeWidth="0.0" text="Son kullanım Tarihi" textAlignment="CENTER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="c1" fill="#1800a1" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Yüklü Miktar" textAlignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="inputDiv11" layoutX="83.0" layoutY="85.0" prefHeight="196.0" prefWidth="254.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+                     <children>
+                        <Label layoutX="16.0" layoutY="45.0" prefHeight="19.0" prefWidth="222.0" text="Kart Numaranızı Giriniz" AnchorPane.bottomAnchor="131.8">
+                           <font>
+                              <Font name="Verdana Pro Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="card_show" accessibleText="Material_Three" layoutX="51.0" layoutY="146.0" onAction="#Card_show" style="-fx-background-color: #7465FD;" text="SHOW" />
+                        <Button fx:id="HAT_ID_RESET11" accessibleText="Material_Three" layoutX="147.0" layoutY="146.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
+                        <TextField fx:id="Card_input" layoutX="51.0" layoutY="80.0" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
         </content>

@@ -31,6 +31,19 @@
         <item name="transportation@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="transportation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="transportation: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="transportation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="transportation: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="travel_card: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -137,7 +150,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -295,7 +308,8 @@
       <workItem from="1590220360923" duration="1459000" />
       <workItem from="1590221916259" duration="2140000" />
       <workItem from="1590340701613" duration="1033000" />
-      <workItem from="1590510561722" duration="693000" />
+      <workItem from="1590510561722" duration="2007000" />
+      <workItem from="1590516123590" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="Transportation ödevi 3 tab">
       <created>1590220951991</created>
@@ -358,10 +372,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="385" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1590220904818" />
-    <state x="361" y="71" key="#Notifications" timestamp="1590221477969">
+    <state x="361" y="71" key="#Notifications" timestamp="1590517250257">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1590221477969" />
+    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1590517250257" />
     <state x="361" y="71" key="#Options" timestamp="1590064398532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -406,26 +420,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="71" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1590221449304" />
-    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1590512924107">
+    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1590517097908">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590512924107" />
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1590356688897">
+    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590517097908" />
+    <state width="1493" height="191" key="GridCell.Tab.0.bottom" timestamp="1590514861765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590356688897" />
-    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1590356688897">
+    <state width="1493" height="191" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590514861765" />
+    <state width="1493" height="191" key="GridCell.Tab.0.center" timestamp="1590514861765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590356688897" />
-    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1590356688897">
+    <state width="1493" height="191" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590514861765" />
+    <state width="1493" height="191" key="GridCell.Tab.0.left" timestamp="1590514861765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590356688897" />
-    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1590356688897">
+    <state width="1493" height="191" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590514861765" />
+    <state width="1493" height="191" key="GridCell.Tab.0.right" timestamp="1590514861765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590356688897" />
+    <state width="1493" height="191" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590514861765" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1590163887659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -450,10 +464,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="439" y="112" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1590221826380" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1590512954096">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1590517277730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590512954096" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590517277730" />
     <state x="533" y="117" key="VCS.ChangeListViewerDialog" timestamp="1590221580140">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -462,14 +476,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="328" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1590223920298" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1590224125134">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1590517046180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590224125134" />
-    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590224110612">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590517046180" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590517438477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590224110612" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590517438477" />
     <state x="432" y="204" key="git4idea.merge.GitPullDialog" timestamp="1590221538154">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
