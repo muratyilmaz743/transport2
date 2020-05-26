@@ -123,10 +123,7 @@ public class Controller implements Initializable{
                 col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(j).toString()));
 
                 tableview.getColumns().addAll(col);
-
-
             }
-
             /********************************
              * Data added to ObservableList *
              ********************************/
@@ -186,7 +183,6 @@ public class Controller implements Initializable{
                     row.add(rst.getString(i));
                 }
                 hatdata.add(row);
-
             }
             //FINALLY ADDED TO TableView
             Hat_Show_Table.setItems(hatdata);
