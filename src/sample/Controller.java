@@ -47,7 +47,7 @@ public class Controller implements Initializable{
     String user = "root";
     String pass = "1234";
     private ObservableList<ObservableList> data;
-    private ObservableList<ObservableList> empty;
+
     @FXML
     private TableView tableview;
                                                         /********************
