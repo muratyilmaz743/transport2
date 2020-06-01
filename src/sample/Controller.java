@@ -37,6 +37,12 @@ public class Controller implements Initializable{
     public Label showbalance;
     public Label showLastdate;
     public Label showType;
+    public Button message_btn;
+    public Button HAT_ID_RESET_message;
+    public TextField message_input;
+    public TextArea messageText;
+    public Label messageWarning2;
+    public Label messageWarning;
 
 
     //Connection for database//
@@ -239,12 +245,31 @@ public class Controller implements Initializable{
          Card_input.setText("");
          Card_input.requestFocus();
      }
+    public void message_sent(){
+         if (message_input.getText().equals(""))
+             messageWarning.setText("Kişi numaranızı bilmek zorundayım :(");
+         if (messageText.getText()=="")
+             messageWarning2.setText("");
+
+        try {
+            String SQL = "INSERT INTO transportation.mmessage (`person_passenger_id`, `message_`) values ('"+message_input.getText()+"','"+messageText.getText()+"')";
+            statement.executeUpdate(SQL);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("adding error");
+        }
+
+    }
 
 
     public void Hat_Reset(){
         HAT_INPUT.setText("");
         HAT_INPUT2.setText("");
         HAT_SwInput.setText("");
+        message_input.setText("");
+        message_input.setText("");
+        messageText.setText("");
         HAT_INPUT.requestFocus();
         HAT_INPUT2.requestFocus();
         HAT_SwInput.requestFocus();
