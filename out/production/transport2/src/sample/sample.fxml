@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -16,11 +17,11 @@
 
 <TabPane prefHeight="426.0" prefWidth="894.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" xmlns:fxcontroller="sample/Controller.java" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <tabs>
-      <Tab fx:id="tab1" style="-fx-background-color: #F7F8FF;" text="Hat Ara">
+      <Tab fx:id="tab1" style="-fx-background-color: #00B1D0;" text="Hat Ara">
          <content>
-            <AnchorPane fx:id="HatTab" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="575.0" style="-fx-background-color: #F7F8FF;">
+            <AnchorPane fx:id="HatTab" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="575.0" style="-fx-background-color: #00B1D0;">
                <children>
-                  <AnchorPane fx:id="inputDiv" layoutX="91.0" layoutY="18.0" prefHeight="305.0" prefWidth="258.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="544.0" AnchorPane.topAnchor="20.0">
+                  <AnchorPane fx:id="inputDiv" layoutX="87.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="305.0" prefWidth="258.0" style="-fx-background-color: linear-gradient(to right, #246bd5, #3b77dc, #4e82e3, #5e8ee9, #6e9af0); -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="547.0" AnchorPane.topAnchor="19.0">
                      <children>
                         <Label layoutX="39.0" layoutY="73.0" text="Hat Numarası Giriniz" AnchorPane.bottomAnchor="218.8">
                            <font>
@@ -32,7 +33,7 @@
                         <TextField fx:id="HAT_INPUT" layoutX="54.0" layoutY="116.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="showDiv" layoutX="350.0" layoutY="46.0" prefHeight="249.0" prefWidth="469.0" style="-fx-background-color: #8A8EBA; -fx-border-width: 1 1 1 0; -fx-background-radius: 0 10 10 0; -fx-border-color: white; -fx-border-radius: 0 10 10 0;" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="46.0">
+                  <AnchorPane fx:id="showDiv" layoutX="346.0" layoutY="45.0" prefHeight="275.0" prefWidth="473.0" style="-fx-background-color: linear-gradient(to right, #6e9af0, #81a6ef, #93b2ee, #a5bdec, #b7c9ea);; -fx-border-width: 1 1 1 0; -fx-background-radius: 0 10 10 0; -fx-border-color: white; -fx-border-radius: 0 10 10 0;" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="346.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="45.0">
                      <children>
                         <GridPane layoutX="2.0" layoutY="2.0" prefHeight="241.0" prefWidth="571.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="45.0">
                           <columnConstraints>
@@ -79,11 +80,11 @@
          </content>
 
       </Tab>
-      <Tab fx:id="tab2" style="-fx-background-color: #F7F8FF;" text="Duraklar">
+      <Tab fx:id="tab2" style="-fx-background-color: #00B1D0;" text="Duraklar">
         <content>
-          <AnchorPane fx:id="hat_tab2" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="894.0" style="-fx-background-color: #F7F8FF;">
+          <AnchorPane fx:id="hat_tab2" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="894.0" style="-fx-background-color: #00B1D0;">
                <children>
-                  <AnchorPane fx:id="inputDiv2" layoutX="317.0" layoutY="6.0" prefHeight="88.0" prefWidth="694.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="278.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="inputDiv2" layoutX="317.0" layoutY="6.0" prefHeight="88.0" prefWidth="694.0" style="-fx-background-color: linear-gradient(to bottom, #3162c1, #4170cd, #517ed9, #5f8ce4, #6e9af0);; -fx-border-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="278.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label layoutX="24.0" layoutY="38.0" text="Hat Numarası Giriniz" AnchorPane.bottomAnchor="32.8" AnchorPane.topAnchor="33.0">
                            <font>
@@ -95,24 +96,29 @@
                         <Button fx:id="HAT_ID_SHOW2" accessibleText="Material_Three" layoutX="576.0" layoutY="27.0" onAction="#Hat_Show2" style="-fx-background-color: #7465FD;" text="SHOW" AnchorPane.topAnchor="33.0" />
                      </children>
                   </AnchorPane>
-                  <TableView fx:id="tableview" layoutX="332.0" layoutY="103.0" prefHeight="262.0" prefWidth="226.0" style="-fx-background-color: #F7F8FF;" AnchorPane.bottomAnchor="1.0" AnchorPane.topAnchor="103.0">
-                     <columns>
-                        <TableColumn fx:id="Sıra" prefWidth="38.4000244140625" text="Sıra" />
-                        <TableColumn fx:id="No" minWidth="16.0" prefWidth="39.20001220703125" text="No" />
-                        <TableColumn fx:id="Adı" prefWidth="148.79998779296875" text="Adı" />
-                     </columns></TableView>
+                  <AnchorPane layoutX="205.0" layoutY="87.0" prefHeight="278.0" prefWidth="494.0" style="-fx-background-color: linear-gradient(to bottom, #6e9af0, #81a6ef, #93b2ee, #a5bdec, #b7c9ea);; -fx-background-radius: 0 0 10 10; -fx-border-radius: 0 0 10 10; -fx-border-color: white; -fx-border-width: 0 1 1 1;">
+                     <children>
+                        <TableView fx:id="tableview" layoutX="133.0" layoutY="14.0" prefHeight="262.0" prefWidth="226.0" style="-fx-background-color: #F7F8FF;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
+                           <columns>
+                              <TableColumn fx:id="Sıra" prefWidth="38.4000244140625" text="Sıra" />
+                              <TableColumn fx:id="No" minWidth="16.0" prefWidth="39.20001220703125" text="No" />
+                              <TableColumn fx:id="Adı" prefWidth="148.79998779296875" text="Adı" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
         </content>
 
       </Tab>
-      <Tab fx:id="tab3" style="-fx-background-color: #F7F8FF;" text="Duraktan Geçen hatlar">
+      <Tab fx:id="tab3" style="-fx-background-color: #00B1D0;" text="Duraktan Geçen hatlar">
         <content>
-          <AnchorPane fx:id="durak_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane fx:id="durak_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
                <children>
-                  <AnchorPane layoutX="403.0" layoutY="28.0" prefHeight="326.0" prefWidth="246.0" style="-fx-background-color: #8A8EBA; -fx-background-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="403.0">
+                  <AnchorPane layoutX="403.0" layoutY="28.0" prefHeight="326.0" prefWidth="259.0" style="-fx-background-color: linear-gradient(to right, #6e9af0, #81a6ef, #93b2ee, #a5bdec, #b7c9ea); -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;" AnchorPane.leftAnchor="403.0">
                      <children>
-                        <TableView fx:id="Hat_Show_Table" layoutX="16.0" layoutY="14.0" prefHeight="323.0" prefWidth="236.0" style="-fx-border-radius: 10;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <TableView fx:id="Hat_Show_Table" layoutX="9.0" layoutY="7.0" prefHeight="314.0" prefWidth="245.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
                           <columns>
                             <TableColumn fx:id="Hat_No" prefWidth="109.5999755859375" text="Hat Numarası" />
                             <TableColumn fx:id="Hat_adi" prefWidth="126.4000244140625" text="Hat İsmi" />
@@ -120,7 +126,8 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="inputDiv1" layoutX="149.0" layoutY="74.0" prefHeight="196.0" prefWidth="254.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+                  <Label fx:id="info_label" alignment="CENTER" layoutX="410.0" layoutY="5.0" prefHeight="18.0" prefWidth="231.0" textAlignment="CENTER" />
+                  <AnchorPane fx:id="inputDiv1" layoutX="148.0" layoutY="74.0" prefHeight="196.0" prefWidth="256.0" style="-fx-background-color: linear-gradient(to right, #246bd5, #3b77dc, #4e82e3, #5e8ee9, #6e9af0); -fx-border-color: white; -fx-border-radius: 10 0 0 10; -fx-background-radius: 10 0 0 10; -fx-border-width: 1 0 1 1;">
                      <children>
                         <Label layoutX="36.0" layoutY="39.0" text="Durak Numarası Giriniz" AnchorPane.bottomAnchor="129.0">
                            <font>
@@ -132,16 +139,15 @@
                         <TextField fx:id="HAT_SwInput" layoutX="51.0" layoutY="80.0" />
                      </children>
                   </AnchorPane>
-                  <Label fx:id="info_label" alignment="CENTER" layoutX="410.0" layoutY="5.0" prefHeight="18.0" prefWidth="231.0" textAlignment="CENTER" />
                </children>
             </AnchorPane>
         </content>
       </Tab>
-      <Tab style="-fx-background-color: #F7F8FF;" text="Kartım">
+      <Tab style="-fx-background-color: #00B1D0;" text="Kartım">
         <content>
-          <AnchorPane fx:id="Card_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane fx:id="Card_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
                <children>
-                  <AnchorPane fx:id="showDiv1" layoutX="298.0" layoutY="6.0" prefHeight="343.0" prefWidth="496.0" style="-fx-background-color: #8A8EBA; -fx-border-width: 1 1 1 0; -fx-background-radius: 10 10 10 10; -fx-border-color: white; -fx-border-radius: 10 10 10 10;" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
+                  <AnchorPane fx:id="showDiv1" layoutX="298.0" layoutY="6.0" prefHeight="343.0" prefWidth="496.0" style="-fx-background-color: linear-gradient(to right, #6e9af0, #81a6ef, #93b2ee, #a5bdec, #b7c9ea); -fx-background-radius: 10 10 10 10; -fx-border-color: white; -fx-border-radius: 10 10 10 10;" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
                      <children>
                         <GridPane layoutX="2.0" layoutY="2.0" prefHeight="303.0" prefWidth="477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="0.0">
                            <columnConstraints>
@@ -176,9 +182,9 @@
                         </GridPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="inputDiv11" layoutX="83.0" layoutY="85.0" prefHeight="196.0" prefWidth="254.0" style="-fx-background-color: #5169C0; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+                  <AnchorPane fx:id="inputDiv11" layoutX="45.0" layoutY="85.0" prefHeight="196.0" prefWidth="254.0" style="-fx-background-color: linear-gradient(to right, #246bd5, #3b77dc, #4e82e3, #5e8ee9, #6e9af0); -fx-border-color: white; -fx-border-radius: 10 0 0 10; -fx-background-radius: 10 0 0 10; -fx-border-width: 1 0 1 1;">
                      <children>
-                        <Label layoutX="16.0" layoutY="45.0" prefHeight="19.0" prefWidth="222.0" text="Kart Numaranızı Giriniz" AnchorPane.bottomAnchor="131.8">
+                        <Label layoutX="17.0" layoutY="45.0" prefHeight="19.0" prefWidth="222.0" text="Kart Numaranızı Giriniz" AnchorPane.bottomAnchor="131.8">
                            <font>
                               <Font name="Verdana Pro Black" size="15.0" />
                            </font>
@@ -186,6 +192,34 @@
                         <Button fx:id="card_show" accessibleText="Material_Three" layoutX="51.0" layoutY="146.0" onAction="#Card_show" style="-fx-background-color: #7465FD;" text="SHOW" />
                         <Button fx:id="HAT_ID_RESET11" accessibleText="Material_Three" layoutX="147.0" layoutY="146.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
                         <TextField fx:id="Card_input" layoutX="51.0" layoutY="80.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab style="-fx-background-color: #00B1D0;" text="Görüş-Öneri">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
+               <children>
+                  <AnchorPane layoutX="304.0" layoutY="35.0" prefHeight="296.0" prefWidth="547.0" style="-fx-background-color: linear-gradient(to right, #6e9af0, #81a6ef, #93b2ee, #a5bdec, #b7c9ea); -fx-border-color: White; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.bottomAnchor="35.0" AnchorPane.topAnchor="35.0">
+                     <children>
+                        <TextArea fx:id="messageText" layoutX="14.0" layoutY="14.0" prefHeight="226.0" prefWidth="478.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="40.0" />
+                        <Text layoutX="46.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mesajınız:" wrappingWidth="89.39815139770508" />
+                        <Label fx:id="messageWarning2" layoutX="135.0" layoutY="23.0" prefHeight="18.0" prefWidth="278.0" />
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="messageWarning" layoutX="97.0" layoutY="68.0" prefHeight="18.0" prefWidth="154.0" />
+                  <AnchorPane fx:id="inputDiv111" layoutX="51.0" layoutY="85.0" prefHeight="196.0" prefWidth="254.0" style="-fx-background-color: linear-gradient(to right, #246bd5, #3b77dc, #4e82e3, #5e8ee9, #6e9af0); -fx-border-color: white; -fx-border-radius: 10 0 0 10; -fx-background-radius: 10 0 0 10; -fx-border-width: 1 0 1 1;">
+                     <children>
+                        <Label layoutX="16.0" layoutY="45.0" prefHeight="19.0" prefWidth="222.0" text="Kişi Numaranızı Giriniz" AnchorPane.bottomAnchor="131.8">
+                           <font>
+                              <Font name="Verdana Pro Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="message_btn" accessibleText="Material_Three" layoutX="51.0" layoutY="146.0" onAction="#message_sent" style="-fx-background-color: #7465FD;" text="SEND" />
+                        <Button fx:id="HAT_ID_RESET_message" accessibleText="Material_Three" layoutX="147.0" layoutY="146.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
+                        <TextField fx:id="message_input" layoutX="51.0" layoutY="80.0" />
                      </children>
                   </AnchorPane>
                </children>
