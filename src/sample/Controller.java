@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.beans.binding.ObjectExpression;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -11,8 +12,12 @@ import javafx.util.Callback;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 
 public class Controller implements Initializable{
@@ -43,6 +48,20 @@ public class Controller implements Initializable{
     public TextArea messageText;
     public Label messageWarning2;
     public Label messageWarning;
+    public Button HAT_ID_SHOW3;
+    public Button HAT_ID_RESET3;
+    public TextField HAT_INPUT3;
+    public Label günInfo;
+    public Label saatInfo;
+    public TableView tableHour;
+    public CheckBox çarşamba;
+    public CheckBox pazartesi;
+    public CheckBox cuma;
+    public CheckBox cumartesi;
+    public CheckBox pazar;
+    public CheckBox salı;
+    public CheckBox perşembe;
+
 
 
     //Connection for database//
@@ -60,6 +79,7 @@ public class Controller implements Initializable{
                                                          *FİRST TAB AND TABLE
                                                         ********************/
     private ObservableList<ObservableList> hatdata;
+    private ObservableList<String> hatdata2;
 
     {
         try {
@@ -192,16 +212,12 @@ public class Controller implements Initializable{
              * Data added to ObservableList *
              ********************************/
             while(rst.next()){
-                //Iterate Row
-
                 ObservableList<String> row = FXCollections.observableArrayList();
                 for(int i=1 ; i<=rst.getMetaData().getColumnCount(); i++){
-
                     row.add(rst.getString(i));
                 }
                 hatdata.add(row);
             }
-            //FINALLY ADDED TO TableView
             Hat_Show_Table.setItems(hatdata);
 
         }catch(Exception e){
@@ -260,7 +276,91 @@ public class Controller implements Initializable{
             System.out.println("adding error");
         }
 
+
     }
+
+    public void Hat_Show4(){
+        pazartesi.setSelected(false);
+        salı.setSelected(false);
+        çarşamba.setSelected(false);
+        perşembe.setSelected(false);
+        cuma.setSelected(false);
+        cumartesi.setSelected(false);
+        pazar.setSelected(false);
+
+        String hatNo = HAT_INPUT3.getText();
+        String[] columns1 = {"TIME"};
+        hatdata = FXCollections.observableArrayList();
+        hatdata2 = FXCollections.observableArrayList();
+
+        try{
+            //SQL FOR SELECTING ALL OF CUSTOMER
+            String SQL  = "SELECT gün from gunler where hat_ID="+hatNo;
+            String SQL2 = "SELECT saat from zamanlama where hat_ID="+hatNo;
+            ResultSet rst = conn.createStatement().executeQuery(SQL);
+            ResultSet rst2 = conn.createStatement().executeQuery(SQL2);
+
+            for(int i=0 ; i<rst2.getMetaData().getColumnCount(); i++)
+                tableHour.getColumns().clear();
+
+
+            for(int i=0 ; i<rst2.getMetaData().getColumnCount(); i++){
+                final int j = i;
+                TableColumn col = new TableColumn(columns1[i]);
+                col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param
+                        -> new SimpleStringProperty(param.getValue().get(j).toString()));
+
+                tableHour.getColumns().addAll(col);
+            }
+
+
+
+            while(rst2.next()){
+                //Iterate Row
+
+                ObservableList<String> row = FXCollections.observableArrayList();
+                for(int i=1 ; i<=rst2.getMetaData().getColumnCount(); i++){
+
+                    row.add(rst2.getString(i));
+                }
+                hatdata.add(row);
+            }
+
+            while(rst.next()){
+                //Iterate Row
+
+                ObservableList<String> row = FXCollections.observableArrayList();
+                for(int i=1 ; i<=rst.getMetaData().getColumnCount(); i++){
+
+                    row.add(rst.getString(i));
+                }
+                hatdata2.add(String.valueOf(row));
+            }
+            //FINALLY ADDED TO TableView
+            tableHour.setItems(hatdata);
+
+            for(int i=0 ; i<hatdata2.size(); i++){
+                List<String> gunler = hatdata2.stream().collect(Collectors.toList());
+
+
+                pazartesi.setSelected(gunler.contains("[pazartesi]"));
+                salı.setSelected(gunler.contains("[salı]"));
+                çarşamba.setSelected(gunler.contains("[çarşamba]"));
+                perşembe.setSelected(gunler.contains("[perşembe]"));
+                cuma.setSelected(gunler.contains("[cuma]"));
+                cumartesi.setSelected(gunler.contains("[cumartesi]"));
+                pazar.setSelected(gunler.contains("[pazar]"));
+
+            }
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Error on Building Data");
+        }
+
+
+     }
 
 
     public void Hat_Reset(){
@@ -273,6 +373,8 @@ public class Controller implements Initializable{
         HAT_INPUT.requestFocus();
         HAT_INPUT2.requestFocus();
         HAT_SwInput.requestFocus();
+        HAT_INPUT3.setText("");
+        HAT_INPUT3.requestFocus();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

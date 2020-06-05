@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
 <TabPane prefHeight="426.0" prefWidth="894.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" xmlns:fxcontroller="sample/Controller.java" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <tabs>
-      <Tab fx:id="tab1" style="-fx-background-color: #00B1D0;" text="Hat Ara">
+      <Tab fx:id="tab1" text="Hat Ara">
          <content>
             <AnchorPane fx:id="HatTab" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="575.0" style="-fx-background-color: #00B1D0;">
                <children>
@@ -68,7 +81,7 @@
          </content>
 
       </Tab>
-      <Tab fx:id="tab2" style="-fx-background-color: #00B1D0;" text="Duraklar">
+      <Tab fx:id="tab2" text="Duraklar">
         <content>
           <AnchorPane fx:id="hat_tab2" minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="894.0" style="-fx-background-color: #00B1D0;">
                <children>
@@ -100,7 +113,7 @@
         </content>
 
       </Tab>
-      <Tab fx:id="tab3" style="-fx-background-color: #00B1D0;" text="Duraktan Geçen hatlar">
+      <Tab fx:id="tab3" text="Duraktan Geçen hatlar">
         <content>
           <AnchorPane fx:id="durak_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
                <children>
@@ -131,7 +144,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab style="-fx-background-color: #00B1D0;" text="Kartım">
+      <Tab text="Kartım">
         <content>
           <AnchorPane fx:id="Card_tab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
                <children>
@@ -186,7 +199,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab style="-fx-background-color: #00B1D0;" text="Görüş-Öneri">
+      <Tab text="Görüş-Öneri">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
                <children>
@@ -208,6 +221,47 @@
                         <Button fx:id="message_btn" accessibleText="Material_Three" layoutX="51.0" layoutY="146.0" onAction="#message_sent" style="-fx-background-color: #7465FD;" text="SEND" />
                         <Button fx:id="HAT_ID_RESET_message" accessibleText="Material_Three" layoutX="147.0" layoutY="146.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
                         <TextField fx:id="message_input" layoutX="51.0" layoutY="80.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Günler-Saatler">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #00B1D0;">
+               <children>
+                  <AnchorPane layoutX="342.0" layoutY="20.0" prefHeight="326.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to right, #6e9af0, #81a6ef, #93b2ee, #a5bdec, #b7c9ea); -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white;">
+                     <children>
+                        <Label fx:id="günInfo" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="186.0" />
+                        <Label fx:id="saatInfo" layoutX="292.0" layoutY="14.0" prefHeight="18.0" prefWidth="168.0" />
+                        <Text layoutX="14.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hattın Günleri" textAlignment="CENTER" wrappingWidth="100.4549331665039" AnchorPane.rightAnchor="408.74506683349614" />
+                        <Text layoutX="1.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hattın Saatleri" textAlignment="CENTER" wrappingWidth="101.03827667236328" />
+                        <TableView fx:id="tableHour" layoutX="271.0" layoutY="9.0" prefHeight="198.0" prefWidth="95.0">
+                          <columns>
+                            <TableColumn minWidth="0.0" prefWidth="0.0" />
+                              <TableColumn prefWidth="324.800048828125" text="Saatler" />
+                          </columns>
+                        </TableView>
+                        <CheckBox fx:id="çarşamba" disable="true" layoutX="171.0" layoutY="255.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Wednesday" />
+                        <CheckBox fx:id="pazartesi" disable="true" layoutX="171.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Monday" />
+                        <CheckBox fx:id="cuma" disable="true" layoutX="376.0" layoutY="234.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Friday" />
+                        <CheckBox fx:id="pazar" disable="true" layoutX="272.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Sunday" />
+                        <CheckBox fx:id="perşembe" disable="true" layoutX="376.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Thursday" />
+                        <CheckBox fx:id="cumartesi" disable="true" layoutX="376.0" layoutY="255.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Saturday" />
+                        <CheckBox fx:id="salı" disable="true" layoutX="171.0" layoutY="234.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Tuesday" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="inputDiv3" layoutX="80.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="262.0" prefWidth="264.0" style="-fx-background-color: linear-gradient(to right, #246bd5, #3b77dc, #4e82e3, #5e8ee9, #6e9af0); -fx-border-color: white; -fx-border-radius: 10 0 0 10; -fx-background-radius: 10 0 0 10; -fx-border-width: 1 0 1 1;" AnchorPane.leftAnchor="80.0">
+                     <children>
+                        <Label layoutX="46.0" layoutY="59.0" text="Hat Numarası Giriniz" AnchorPane.bottomAnchor="184.2">
+                           <font>
+                              <Font name="Verdana Pro Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="HAT_ID_SHOW3" accessibleText="Material_Three" layoutX="46.0" layoutY="168.0" onAction="#Hat_Show4" style="-fx-background-color: #7465FD;" text="SHOW" />
+                        <Button fx:id="HAT_ID_RESET3" accessibleText="Material_Three" layoutX="145.0" layoutY="168.0" onAction="#Hat_Reset" style="-fx-background-color: #7465FD;" text="RESET" />
+                        <TextField fx:id="HAT_INPUT3" layoutX="56.0" layoutY="104.0" />
                      </children>
                   </AnchorPane>
                </children>
