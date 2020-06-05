@@ -1253,22 +1253,23 @@ gün</ColNames>
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="283" name="passenger_id">
+    <column id="312" parent="283" name="message_">
       <Position>2</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="313" parent="283" name="message_">
-      <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="314" parent="283" name="FK_message_Person">
-      <ColNames>passenger_id</ColNames>
+    <column id="313" parent="283" name="person_Passenger_ID">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="314" parent="283" name="fk_mmessage_person1_idx">
+      <ColNames>person_Passenger_ID</ColNames>
       <Type>btree</Type>
     </index>
     <key id="315" parent="283" name="PRIMARY">
@@ -1276,8 +1277,8 @@ gün</ColNames>
       <ColNames>message_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="316" parent="283" name="FK_message_Person">
-      <ColNames>passenger_id</ColNames>
+    <foreign-key id="316" parent="283" name="fk_mmessage_person1">
+      <ColNames>person_Passenger_ID</ColNames>
       <RefTableName>person</RefTableName>
       <RefColNames>Passenger_ID</RefColNames>
     </foreign-key>
@@ -1285,6 +1286,7 @@ gün</ColNames>
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="318" parent="284" name="namee">
@@ -1309,64 +1311,49 @@ gün</ColNames>
       <ColNames>Passenger_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="322" parent="285" name="Passenger_ID">
+    <column id="322" parent="285" name="card_type">
       <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="323" parent="285" name="card_type">
-      <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="324" parent="285" name="Last_date">
-      <Position>3</Position>
+    <column id="323" parent="285" name="Last_date">
+      <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="285" name="card_number">
-      <Position>4</Position>
+    <column id="324" parent="285" name="card_number">
+      <Position>3</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="285" name="balance">
-      <Position>5</Position>
+    <column id="325" parent="285" name="balance">
+      <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="327" parent="285" name="FK_Person_travel_card">
-      <ColNames>Passenger_ID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="328" parent="285" name="PRIMARY">
+    <key id="326" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>card_number</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="329" parent="285" name="FK_Person_travel_card">
-      <ColNames>Passenger_ID</ColNames>
-      <RefTableName>person</RefTableName>
-      <RefColNames>Passenger_ID</RefColNames>
-    </foreign-key>
-    <column id="330" parent="286" name="hat_ID">
+    <column id="327" parent="286" name="hat_ID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="331" parent="286" name="saat">
+    <column id="328" parent="286" name="saat">
       <Position>2</Position>
       <DataType>time(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="332" parent="286" name="FK_saat_hat">
+    <index id="329" parent="286" name="FK_saat_hat">
       <ColNames>hat_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="333" parent="286" name="FK_saat_hat">
+    <foreign-key id="330" parent="286" name="FK_saat_hat">
       <ColNames>hat_ID</ColNames>
       <RefTableName>hat</RefTableName>
       <RefColNames>hat_ID</RefColNames>
